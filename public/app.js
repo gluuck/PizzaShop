@@ -6,3 +6,6 @@ function something() {
 	window.localStorage.setItem('bbb',x);
 	alert(x);
 }
+function add_to_card() {
+	alert('hello from function');
+}
