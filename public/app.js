@@ -6,6 +6,6 @@ function something() {
 	window.localStorage.setItem('bbb',x);
 	alert(x);
 }
-function add_to_card() {
-	alert('hello from function');
+function add_to_card(id) {
+	alert('You added pizza with id: '+id);
 }
