@@ -1,39 +1,21 @@
 <p><h1>Welcome to Pizza Shop</h1></p>
 
-<!--<div class="container">
-	<div class="row">
-	<div class="col-sm-4">
-		<img src="/images/pizza.jpg">
-	</div>	
-	
-</div><br>
-<div class="container">
-	<div class="row">
-	<div class="col-sm-4">
-		<img src="/images/pizza1.jpg">
-	</div><br>
-<div class="container">
-	<div class="row">
-	<div class="col-sm">
-		<img src="/images/pizza2.jpg">
-	</div><br>
-	</div>
-</div>-->
+
 <div class="row">
 <% @products.each do|p|%>
 <div class="col-md-3">
 	<div>
 	<%= p.title %>
 	</div>
-	<div><img src="<%= p.path_to_image%>"></div>
+	<div><img src="<%= p.path_to_image%>" width="250" height="200"></div>
 	<div>
 		<%= p.description %>
 	</div>
 	<div>
-		<%= p.size %>
+		<b>Size:</b><%= p.size %> cm
 	</div>
 	<div>
-		<%= p.price %>
+		<b>Price:</b><%= p.price %> rub
 	</div>
 </div>
 <% end%>
