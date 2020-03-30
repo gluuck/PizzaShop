@@ -1,22 +1,41 @@
 <p><h1>Welcome to Pizza Shop</h1></p>
 
-<div class="container">
+<!--<div class="container">
 	<div class="row">
-	<div class="col-xs">
+	<div class="col-sm-4">
 		<img src="/images/pizza.jpg">
 	</div>	
 	
 </div><br>
 <div class="container">
 	<div class="row">
-	<div class="col-xs">
+	<div class="col-sm-4">
 		<img src="/images/pizza1.jpg">
 	</div><br>
 <div class="container">
 	<div class="row">
-	<div class="col-xs">
+	<div class="col-sm">
 		<img src="/images/pizza2.jpg">
 	</div><br>
 	</div>
+</div>-->
+<div class="row">
+<% @products.each do|p|%>
+<div class="col-md-3">
+	<div>
+	<%= p.title %>
+	</div>
+	<div><img src="<%= p.path_to_image%>"></div>
+	<div>
+		<%= p.description %>
+	</div>
+	<div>
+		<%= p.size %>
+	</div>
+	<div>
+		<%= p.price %>
+	</div>
+</div>
+<% end%>
 </div>
 <button type="submit" class="btn btn-primary " onclick="something()">Click me</button>
