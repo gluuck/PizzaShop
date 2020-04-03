@@ -23,6 +23,7 @@ get '/about' do
 end
 
 post '/cart' do
+
 	@orders_input = params[:orders]
 	@items = parse_orders_input @orders_input
 	@items.each do |item|
@@ -51,8 +52,7 @@ def parse_orders_input orders_input
     return arr
 end
 post '/place_order' do
-	@place_order = params[:place_order]
-	@name = params[:name]
-	@phone = params[:phone]
-	@address = params[:address]
+	@order = Order.create params[:order]
+	
+	erb :place_order
 end
