@@ -9,7 +9,9 @@ set :database , 'sqlite3:pizzashop.db'
 class Product <ActiveRecord::Base
 	
 end
-
+class Order < ActiveRecord::Base
+ 
+end
 
 get '/' do
 	@products = Product.all
@@ -47,4 +49,10 @@ def parse_orders_input orders_input
         arr.push arr2
     end
     return arr
+end
+post '/place_order' do
+	@place_order = params[:place_order]
+	@name = params[:name]
+	@phone = params[:phone]
+	@address = params[:address]
 end

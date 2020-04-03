@@ -40,19 +40,20 @@
 
 <div class="form-group">
   <label for="">Name: </label>
-  <input name="order[name]" type="text" class="form-control" placeholder="Введите имя"value="">
+  <input name="order[name]" type="text" class="form-control" placeholder="Введите имя"value="<%= @name %>">
 
 </div>
 <div class="form-group">
   <label for="">Phone: </label>
-  <input name="order[phone]"type="text" class="form-control" placeholder="Введите телефон" value="" >
+  <input name="order[phone]"type="text" class="form-control" placeholder="Введите телефон" value="<%= @phone %>" >
 
 </div>
 <div class="form-group">
   <label for="">Address: </label>
-  <textarea name="order[address]" type="text" class="form-control" placeholder="Введите адрес" value=""></textarea>
+  <textarea name="order[address]" type="text" class="form-control" placeholder="Введите адрес" value="<%= @address %>"></textarea>
 </div>
 
 </div>
+<button type="submit" class="btn btn-success btn-lg"onclick="">Place this order!</button>
 </form>
-  <button type="submit" class="btn btn-success btn-lg">Place this order!</button>
+ 
