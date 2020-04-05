@@ -7,10 +7,10 @@ require 'sinatra/activerecord'
 set :database , 'sqlite3:pizzashop.db'
 
 class Product <ActiveRecord::Base
-	
+
 end
 class Order < ActiveRecord::Base
- 
+
 end
 
 get '/' do
@@ -23,19 +23,24 @@ get '/about' do
 end
 
 post '/cart' do
-
+		# получаем список параметров и разбираем их
 	@orders_input = params[:orders_input]
 	@items = parse_orders_input @orders_input
+	# выводим сообщение что корзина пуста
+	if @items.length == 0
+		return erb :cart_is_empty
+	end
+	#выводим список продуктов
 	@items.each do |item|
 		item[0] = Product.find(item[0])
 	end
-	
+ 	#возвращаем представление по умолчанию
 	erb :cart
 end
 
 
 def parse_orders_input orders_input
-    
+
 
 
     s1 = orders_input.split(/,/)
@@ -53,6 +58,6 @@ def parse_orders_input orders_input
 end
 post '/place_order' do
 	@order = Order.create params[:order]
-	
+
 	erb :place_order
 end
