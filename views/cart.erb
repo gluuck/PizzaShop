@@ -5,7 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      
+
       <th scope="col">Name</th>
       <th scope="col">Price</th>
       <th scope="col">Qty</th>
@@ -14,10 +14,10 @@
   <tbody>
   <% total_price = 0 %>
   <% total_qty = 0 %>
-  <% @items.each do |item| %>	  
- 
+  <% @items.each do |item| %>
+
     <tr>
-      
+
       <td><%= item[0].title%></td>
       <td><%= item[0].price%></td>
       <td><%= item[1]%></td>
@@ -26,7 +26,7 @@
   <% total_qty += item[1].to_i %>
    <% end %>
   <tr>
-      
+
       <td></td>
       <td>Total: <%= total_price%> rub</td>
       <td><%= total_qty%></td>
@@ -35,7 +35,7 @@
 </table>
 
 <form action="/place_order" method="post" role="form">
-  
+
   <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>">
 
 <div class="form-group">
@@ -53,8 +53,7 @@
   <textarea name="order[address]" type="text" class="form-control" placeholder="Введите адрес" value="<%= @address %>"></textarea>
 </div>
 
-</div>
+
 <button type="submit" class="btn btn-success btn-lg"onclick="">Place this order!</button>
 <button type="" class="btn btn-danger btn-lg"onclick="return cancel_order()">Cancel</button>
 </form>
- 
